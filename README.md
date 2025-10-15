@@ -35,7 +35,7 @@ Para executar este projeto, você precisará ter instalado:
 
     ```bash
     git clone https://github.com/GuiFelSS/CP5_Java_Part_2.git
-    cd cp5-Brinquedos-esportivos
+    cd CP5_Java_Part_2
     ```
 
 2.  **Configure o banco de dados:**
