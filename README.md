@@ -2,6 +2,12 @@
 
 ---
 
+### EQUIPE
+* NOME: Guilherme Felipe da Silva Souza - RM: 558282
+* NOME: Pablo Lopes Doria de Andrade - RM: 556834
+* NOME: Vinicius Leopoldino de Oliveira - RM: 557047
+---
+
 # CP5 - Brinquedos Esportivos (Parte 2)
 
 Este projeto é a segunda parte do Checkpoint 5, focado na implementação de segurança (Spring Security) para uma aplicação de loja de brinquedos esportivos desenvolvida em Java com Spring Boot.
