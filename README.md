@@ -1,5 +1,7 @@
 ### Acesse o sistema aqui: https://cp5-java-part-2.onrender.com/
 
+---
+
 # CP5 - Brinquedos Esportivos (Parte 2)
 
 Este projeto é a segunda parte do Checkpoint 5, focado na implementação de segurança (Spring Security) para uma aplicação de loja de brinquedos esportivos desenvolvida em Java com Spring Boot.
