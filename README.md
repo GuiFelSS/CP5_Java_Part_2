@@ -30,7 +30,7 @@ Para executar este projeto, você precisará ter instalado:
 1.  **Clone o repositório:**
 
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/GuiFelSS/CP5_Java_Part_2.git
     cd cp5-Brinquedos-esportivos
     ```
 
@@ -168,12 +168,3 @@ spring.jpa.properties.hibernate.format_sql=true
 ## Contribuição
 
 Sinta-se à vontade para contribuir com este projeto. Por favor, siga as boas práticas de desenvolvimento e crie pull requests para quaisquer melhorias ou correções de bugs.
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes. (Se aplicável, crie um arquivo LICENSE no seu repositório.)
-
----
-
-**Autor:** Manus AI
-**Data:** 15 de Outubro de 2025
