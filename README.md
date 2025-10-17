@@ -1,180 +1,104 @@
-### Acesse o sistema aqui: https://cp5-java-part-2.onrender.com/
+# CP5 - Brinquedos Esportivos (SPORTYS) - Parte 2
+
+### 🚀 Acesse a aplicação em produção aqui: [https://cp5-java-part-2.onrender.com/](https://cp5-java-part-2.onrender.com/)
 
 ---
 
-### EQUIPE
-* NOME: Guilherme Felipe da Silva Souza - RM: 558282
-* NOME: Pablo Lopes Doria de Andrade - RM: 556834
-* NOME: Vinicius Leopoldino de Oliveira - RM: 557047
+### 👥 Equipe
+
+| Nome | RM |
+| :--- | :--- |
+| Guilherme Felipe da Silva Souza | 558282 |
+| Pablo Lopes Doria de Andrade | 556834 |
+| Vinicius Leopoldino de Oliveira | 557047 |
+
 ---
 
-# CP5 - Brinquedos Esportivos (Parte 2)
+## 📖 Descrição do Projeto
 
-Este projeto é a segunda parte do Checkpoint 5, focado na implementação de segurança (Spring Security) para uma aplicação de loja de brinquedos esportivos desenvolvida em Java com Spring Boot.
+Este projeto é a segunda parte do Checkpoint 5 da disciplina de Java Avançado. O objetivo foi desenvolver uma aplicação web completa para a loja de brinquedos esportivos "SPORTYS", com foco na implementação de um sistema robusto de segurança utilizando **Spring Security**.
 
-## Descrição
+A aplicação permite o gerenciamento completo de produtos através de operações CRUD (Criar, Ler, Atualizar, Deletar), protegidas por um sistema de autenticação e autorização. A interface foi construída com **Thymeleaf**, seguindo um design moderno e amigável.
 
-A aplicação gerencia brinquedos esportivos, permitindo operações CRUD (Criar, Ler, Atualizar, Deletar) e inclui um sistema de autenticação e autorização utilizando Spring Security. A interface é construída com Thymeleaf.
+## ✨ Funcionalidades
 
-## Tecnologias Utilizadas
+- **CRUD Completo:** Gerenciamento total de brinquedos esportivos.
+- **Autenticação:** Sistema de login com tela customizada.
+- **Registro de Usuários:** Página de "Sign Up" para novos usuários, com senhas criptografadas usando BCrypt.
+- **Autorização por Perfil:** Implementação de dois níveis de acesso:
+    - **`ADMIN`**: Acesso total, incluindo a permissão para deletar produtos.
+    - **`USER`**: Acesso limitado, pode criar, visualizar e editar produtos, mas não pode deletar.
 
-*   **Java 21**
-*   **Spring Boot 3.5.6**
-*   **Spring Security**
-*   **Spring Data JPA**
-*   **Thymeleaf**
-*   **Maven**
-*   **Oracle Database** (via JDBC)
-*   **Lombok**
+## Credentials para Teste
 
-## Pré-requisitos
+Para facilitar a avaliação, foram criados dois usuários de exemplo:
 
-Para executar este projeto, você precisará ter instalado:
+| Perfil | Usuário | Senha |
+| :--- | :--- | :--- |
+| 👤 **Admin** | `AdminTeste` | `Calma.` |
+| 👤 **Usuário**| `UserTeste` | `Tranquilo.`|
 
-*   JDK 21 ou superior
-*   Maven
-*   Um banco de dados Oracle acessível (ou configurar para outro banco de dados compatível com Spring Data JPA)
+---
 
+## 🛠️ Tecnologias Utilizadas
+
+* **Java 21** & **Spring Boot 3.5.6**
+* **Spring Security:** Para autenticação e autorização.
+* **Spring Data JPA:** Para persistência de dados.
+* **Thymeleaf:** Para a camada de visualização (front-end).
+* **Maven:** Para gerenciamento de dependências e build do projeto.
+* **Banco de Dados:**
+    - **Oracle:** Para desenvolvimento local.
+    - **PostgreSQL:** Para o ambiente de produção no Render.
+
+## 📸 Telas da Aplicação
+
+Aqui estão alguns prints que demonstram as principais funcionalidades e o design da aplicação.
+
+#### 1. Tela Inicial
+![Tela Inicial](./imagens/PaginaPrincipal.png)
+
+#### 2. Tela de Login
+![Tela Login](./imagens/paginaLogin.png)
+
+#### 3. Tela de Registro de Novos Usuários
+![Tela Registro](./imagens/paginaRegistrar.png)
+
+#### 4. Tela Principal - Catálogo de Produtos (Visão do Admin)
+![Tela Listagem Admin](./imagens/paginaListagemAdmin.png)
+
+#### 5. Tela Principal - Catálogo de Produtos (Visão do Usuario)
+![Tela Listagem Usuario](./imagens/paginaListagemUsuario.png)
+
+#### 6. Formulário de Adição/Edição de Produto
+![Tela Adicionar e Editar](./imagens/paginaAdicionarEditar.png)
+
+---
+
+## ⚙️ Configuração do Spring Initializr
+
+A imagem abaixo mostra a configuração inicial do projeto no `start.spring.io`, com todas as dependências selecionadas.
+
+![Imagem Spring Initializr](./imagens/configuração_spring.png)
+
+---
 ## Como Executar Localmente
 
 1.  **Clone o repositório:**
-
     ```bash
-    git clone https://github.com/GuiFelSS/CP5_Java_Part_2.git
+    git clone [https://github.com/GuiFelSS/CP5_Java_Part_2.git](https://github.com/GuiFelSS/CP5_Java_Part_2.git)
     cd CP5_Java_Part_2
     ```
 
-2.  **Configure o banco de dados:**
-
-    Certifique-se de que seu banco de dados Oracle esteja acessível e crie um usuário e esquema, se necessário. As configurações do banco de dados são lidas de variáveis de ambiente ou do arquivo `application.properties`.
-
-    Para execução local, você pode criar um arquivo `application-local.properties` (ou similar) ou definir as variáveis de ambiente diretamente no seu sistema:
-
+2.  **Configure o banco de dados local (`application.properties`):**
     ```properties
     spring.datasource.url=jdbc:oracle:thin:@<SEU_HOST_ORACLE>:<PORTA>:<SID>
     spring.datasource.username=<SEU_USUARIO>
     spring.datasource.password=<SUA_SENHA>
-    spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
-    spring.jpa.hibernate.ddl-auto=update
-    spring.jpa.show-sql=true
-    logging.level.org.hibernate.SQL=DEBUG
-    logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
-    spring.jpa.properties.hibernate.format_sql=true
     ```
 
-3.  **Construa o projeto:**
-
+3.  **Construa e execute o projeto com Maven:**
     ```bash
-    mvn clean install
+    mvn spring-boot:run
     ```
-
-4.  **Execute a aplicação:**
-
-    ```bash
-    java -jar target/cp5-Brinquedos-esportivos-0.0.1-SNAPSHOT.jar
-    ```
-
     A aplicação estará disponível em `http://localhost:8080`.
-
-## Como Fazer Deploy no Render
-
-Este projeto está configurado para facilitar o deploy no Render utilizando Docker.
-
-### 1. Dockerfile
-
-Um `Dockerfile` foi adicionado à raiz do projeto para criar uma imagem Docker da aplicação:
-
-```dockerfile
-FROM openjdk:21-jdk-slim
-VOLUME /tmp
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
-```
-
-### 2. Configuração do `application.properties`
-
-O arquivo `src/main/resources/application.properties` foi modificado para utilizar variáveis de ambiente para as credenciais do banco de dados, o que é uma prática de segurança recomendada para ambientes de produção:
-
-```properties
-spring.datasource.url=${DATABASE_URL}
-spring.datasource.username=${DATABASE_USERNAME}
-spring.datasource.password=${DATABASE_PASSWORD}
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-logging.level.org.hibernate.SQL=DEBUG
-logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
-spring.jpa.properties.hibernate.format_sql=true
-```
-
-### 3. Passos para Deploy no Render
-
-1.  **Faça o upload do seu projeto** para um repositório Git (GitHub, GitLab, Bitbucket).
-2.  No painel do Render, **crie um novo `Web Service`**.
-3.  **Conecte seu repositório Git** ao Render.
-4.  **Configure as variáveis de ambiente** no Render para o seu serviço. Você precisará definir as seguintes variáveis, que serão usadas pelo Spring Boot para conectar ao seu banco de dados Oracle:
-    *   `DATABASE_URL`: URL de conexão com seu banco de dados Oracle (ex: `jdbc:oracle:thin:@seu_host_oracle:1521:seu_sid`)
-    *   `DATABASE_USERNAME`: Nome de usuário do banco de dados
-    *   `DATABASE_PASSWORD`: Senha do banco de dados
-5.  **Build Command (Comando de Construção):** O Render deve detectar automaticamente que é um projeto Maven. Se não, defina-o como:
-    ```bash
-    mvn clean install -DskipTests
-    ```
-6.  **Start Command (Comando de Inicialização):** O Render usará o `ENTRYPOINT` do Dockerfile. Se você não estiver usando Docker, o comando seria:
-    ```bash
-    java -jar target/*.jar
-    ```
-7.  **Deploy:** Inicie o deploy. O Render construirá a imagem Docker e executará sua aplicação.
-
-## Estrutura do Projeto
-
-```
-.├── .mvn
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── br
-│   │   │       └── com
-│   │   │           └── fiap
-│   │   │               └── cp5_Brinquedos_esportivos
-│   │   │                   ├── Cp5BrinquedosEsportivosApplication.java
-│   │   │                   ├── config
-│   │   │                   │   └── SecurityConfig.java
-│   │   │                   ├── controller
-│   │   │                   │   ├── AuthController.java
-│   │   │                   │   └── BrinquedoController.java
-│   │   │                   ├── model
-│   │   │                   │   ├── Brinquedo.java
-│   │   │                   │   └── Usuario.java
-│   │   │                   ├── repository
-│   │   │                   │   ├── BrinquedoRepository.java
-│   │   │                   │   └── UsuarioRepository.java
-│   │   │                   └── service
-│   │   │                       └── UsuarioService.java
-│   │   └── resources
-│   │       ├── application.properties
-│   │       └── templates
-│   │           ├── brinquedos.html
-│   │           ├── form-brinquedo.html
-│   │           ├── index.html
-│   │           ├── login.html
-│   │           └── registrar.html
-│   └── test
-│       └── java
-│           └── br
-│               └── com
-│                   └── fiap
-│                       └── cp5_Brinquedos_esportivos
-│                           └── Cp5BrinquedosEsportivosApplicationTests.java
-├── Dockerfile
-├── mvnw
-├── mvnw.cmd
-└── pom.xml
-```
-
-## Contribuição
-
-Sinta-se à vontade para contribuir com este projeto. Por favor, siga as boas práticas de desenvolvimento e crie pull requests para quaisquer melhorias ou correções de bugs.
