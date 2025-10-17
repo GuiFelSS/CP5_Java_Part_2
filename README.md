@@ -1,4 +1,4 @@
-# CP5 - Brinquedos Esportivos (SPORTYS) - Parte 2
+# CP5 - Brinquedos Esportivos - Parte 2
 
 ### 🚀 Acesse a aplicação em produção aqui: [https://cp5-java-part-2.onrender.com/](https://cp5-java-part-2.onrender.com/)
 
@@ -48,6 +48,7 @@ Para facilitar a avaliação, foram criados dois usuários de exemplo:
 * **Thymeleaf:** Para a camada de visualização (front-end).
 * **Maven:** Para gerenciamento de dependências e build do projeto.
 * **IDE Utilizada:** IntelliJ
+* **Deploy:** Render
 * **Banco de Dados:**
     - **Oracle:** Para desenvolvimento local.
     - **PostgreSQL:** Para o ambiente de produção no Render.
