@@ -47,6 +47,7 @@ Para facilitar a avaliação, foram criados dois usuários de exemplo:
 * **Spring Data JPA:** Para persistência de dados.
 * **Thymeleaf:** Para a camada de visualização (front-end).
 * **Maven:** Para gerenciamento de dependências e build do projeto.
+* **IDE Utilizada:** IntelliJ
 * **Banco de Dados:**
     - **Oracle:** Para desenvolvimento local.
     - **PostgreSQL:** Para o ambiente de produção no Render.
